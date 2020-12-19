@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Category Profile</h1>
+    <table>
+        <thead>
+            {% for i in cat_data%}
+            <tr>
+                <th>Name</th>
+                <th>Cover_Pic</th>
+                <th>Description</th>
+                <th>Added_on</th>
+
+            </tr>
+        </thead>
+            <tr>
+                <td>{{i.name}}</td>
+                <td><img src="/media/{{i.cover_pic}}" width="100px" height="100px"></td>
+                <td>{{i.description}}</td>
+                <td>{{i.added_on}}</td>
+            </tr>
+
+            {%endfor%}
+    </table>
+</body>
+</html>

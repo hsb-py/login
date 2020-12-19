@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import Student,Contact_Us
+from app.models import Student,Contact_Us,Category
 # Register your models here.
 
 admin.site.site_header="My website | Himanshu"
@@ -15,7 +15,9 @@ class contactAdmin(admin.ModelAdmin):
     list_editable=['name']
 
 
-
+class CategoryAdmin(admin.ModelAdmin):
+    list_display=["name","cover_pic","description"]
 
 admin.site.register(Student,studentAdmin)
 admin.site.register(Contact_Us,contactAdmin)
+admin.site.register(Category,CategoryAdmin)

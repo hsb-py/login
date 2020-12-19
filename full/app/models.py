@@ -11,7 +11,7 @@ class Student(models.Model):
     fee=models.FloatField()
     gender=models.CharField(max_length=50,choices=c)
     address=models.TextField()
-    is_registered=models.BooleanField()
+    is_registered=models.BooleanField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -29,4 +29,15 @@ class Contact_Us(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural="Contact_Us"    
+        verbose_name_plural="Contact_Us"  
+
+
+class Category(models.Model):
+    name=models.CharField(max_length=50)
+    cover_pic=models.FileField(upload_to="media/%Y%M%D")
+    description=models.TextField()
+    added_on=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name        
+
